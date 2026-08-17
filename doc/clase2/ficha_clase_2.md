@@ -9,9 +9,9 @@
 
 | Identificación | Información |
 |---|---|
-| Integrante 1 | COMPLETAR |
+| Integrante 1 | Javier Castillo Galeas |
 | Integrante 2 | COMPLETAR |
-| Sección y fecha | COMPLETAR |
+| Sección y fecha | D-IEC-N2-P1-C1 16-08-2026 |
 | URL del repositorio | COMPLETAR AL FINAL |
 
 ## Propósito
@@ -28,23 +28,23 @@ Analizar y delimitar una funcionalidad antes de diseñar clases o escribir códi
 
 ### 1.1 Tres hechos explícitos
 
-1. COMPLETAR
-2. COMPLETAR
-3. COMPLETAR
+1. Un entrenador se encuentra con una criatura salvaje cercana
+2. el entrenador intenta capturar la criatura
+3. El entrenador utiliza una capsula de su inventario para intentar capturar
 
 ### 1.2 Tres ambigüedades convertidas en preguntas
 
 | N.º | Expresión ambigua | Pregunta que debe responder el cliente |
 |---:|---|---|
-| 1 | COMPLETAR | COMPLETAR |
-| 2 | COMPLETAR | COMPLETAR |
-| 3 | COMPLETAR | COMPLETAR |
+| 1 | Cercana | ¿Cuál es la distancia máxima considerada cercana para permitir el intento de captura? |
+| 2 | Intenta capturarla | ¿Qué condiciones deben cumplirse para que el intento de captura sea válido? |
+| 3 | Capsulas de su inventario | ¿Que debe ocurrir si el entrenador no tiene capsulas disponibles en su inventario? |
 
 ### 1.3 Supuesto provisional
 
-**Supuesto:** COMPLETAR  
-**Por qué es provisional:** COMPLETAR  
-**Cómo podría confirmarse:** COMPLETAR
+**Supuesto:** La captura solo puede intentarse cuando la criatura se encuentra a una distancia máxima de 50 m del entrenador  
+**Por qué es provisional:** Porque el enunciado original solo indica que la criatura esta “cercana” y no establece una distancia concreta. El 50 m sacado desde el ppt.   
+**Cómo podría confirmarse:** Podría confirmase consultando al cliente. 
 
 Un supuesto no es una verdad del caso. Debe quedar marcado hasta que el cliente, una regla oficial o una evidencia lo confirme.
 
@@ -54,36 +54,38 @@ Fórmula orientadora:
 
 > Permitir que **[actor]** realice **[acción]** sobre **[elemento]**, bajo **[condición]**, y obtenga **[resultado observable]**.
 
-### 2.1 Actor, necesidad y objetivo
++
+-
+--### 2.1 Actor, necesidad y objetivo
 
-**Actor principal:** COMPLETAR  
-**Necesidad:** COMPLETAR  
-**Objetivo reescrito:** COMPLETAR
+**Actor principal:** El entrenador  
+**Necesidad:** Capturar una criatura salvaje utilizando una capsula disponible en su inventario.  
+**Objetivo reescrito:** Permitir que el entrenador intente capturar una criatura salvaje cuando se encuentre dentro de la distancia permitida y tenga una capsula disponible, aplicando las reglas de captura y entregando un resultado observable de éxito o rechazo.
 
 ### 2.2 Entrada, proceso y salida (EPS)
 
 #### Entradas necesarias
 
-1. COMPLETAR
-2. COMPLETAR
-3. COMPLETAR
-4. COMPLETAR
+1. entrenador
+2. Criatura salvaje
+3. Distancia entre el entrenador y la criatura
+4. Capsula disponible en el inventario
 
 #### Proceso observable
 
-1. COMPLETAR
-2. COMPLETAR
-3. COMPLETAR
-4. COMPLETAR
-5. COMPLETAR
-6. COMPLETAR
+1. Identificar al entrenador que realiza el intento
+2. Identificar la criatura que se intenta capturar
+3. Verificar si la criatura esta dentro de la distancia permitida
+4. Verificar que el entrenador tenga una capsula disponible
+5. Aplicar las condiciones conocidas de la captura
+6. Informar el resultado al entrenador
 
 #### Salidas esperadas
 
-1. COMPLETAR
-2. COMPLETAR
-3. COMPLETAR
-4. COMPLETAR
+1. Entrenador identificado
+2. Criatura identificada
+3. Intento permitido o rechazo por distancia
+4. Intento permitido o rechazado por falta de capsula/*
 
 **Prueba de coherencia:** cada salida debe poder explicarse a partir de una entrada, una regla conocida y un paso del proceso.
 
@@ -93,41 +95,41 @@ Una **regla** define qué comportamiento es válido. Una **restricción** limita
 
 ### 3.1 Reglas del problema
 
-1. COMPLETAR
-2. COMPLETAR
-3. COMPLETAR
-4. COMPLETAR
+1. El intento de captura solo es válido si la criatura se encuentra dentro de la distancia máxima.
+2. El entrenador debe disponer de una capsula en su inventario para realizar el intento.
+3. Si no se cumple una condición necesaria para la captura, el sistema debe rechazar el intento.
+4. El resultado de la captura debe informar si fue exitosa o la causa del rechazo. 
 
 ### 3.2 Restricciones
 
-1. COMPLETAR
-2. COMPLETAR
-3. COMPLETAR
+1. Esta primera versión solos enfoca en la funcionalidad de la captura.
+2. Solo se con las condiciones y reglas definidas para la primera versión
+3. La solución debe poder comprobarse mediante resultados obtenidos, sin depender de información que no haya sido definida.                                                                                                               
 
 ### 3.3 Delimitación de la primera versión
 
 #### Dentro del alcance
 
-1. COMPLETAR
-2. COMPLETAR
-3. COMPLETAR
+1. Identificar el entrenador que realiza el intento de captura
+2. Verificar que exista una criatura salvaje y una capsula disponible
+3. Validar las condiciones conocidas de la captura o informar el resultado
 
 #### Fuera del alcance
 
-1. COMPLETAR
-2. COMPLETAR
-3. COMPLETAR
+1. Estadísticas de vida, ataque, defensas
+2. Combate con las criaturas
+3. Intercambio, exploración
 
 #### Supuestos por confirmar
 
-1. COMPLETAR
-2. COMPLETAR
-3. COMPLETAR
+1. Distancia máxima para considerar a una criatura “cerca”
+2. Condiciones que determinen si una captura tiene éxito
+3. Que ocurre con la capsula si la captura es efectiva o fallida. 
 
 ### 3.4 Preguntas pendientes
 
-1. COMPLETAR
-2. COMPLETAR
+1. Que ocurre con la capsula cuando el intento de captura falla.
+2. Que otras condiciones a aparte de la distancia y la disponibilidad de capsula, determina que la captura sea exitosa.
 
 ## 4. Criterios de aceptación y revisión entre pares
 
@@ -137,8 +139,8 @@ Estructura sugerida:
 
 > Dado **[contexto]**, cuando **[acción]**, entonces **[resultado observable]**.
 
-**Criterio 1:** COMPLETAR  
-**Criterio 2:** COMPLETAR
+**Criterio 1:** Dado que el entrenador tiene una capsula disponible y la criatura se encuentra dentro del rango de distancia definido, cuando se intente la captura, entonces el sistema.
+**Criterio 2:** Dado que el entrenador no tiene cápsulas disponibles, cuando intenta capturar una criatura, entonces el sistema impide el intento, no modifica el inventario e informa el motivo.
 
 ### 4.1 Intercambio con otra pareja
 
@@ -156,7 +158,7 @@ Primero guarden la ficha original. La IA puede detectar vacíos y formular pregu
 
 ### 5.1 Registro de la consulta
 
-**Herramienta y fecha:** COMPLETAR  
+**Herramienta y fecha:** ChatGPT — 16/08/2026  
 **Versión original guardada:** SÍ / NO
 
 **Prompt sugerido:**
@@ -167,15 +169,15 @@ Primero guarden la ficha original. La IA puede detectar vacíos y formular pregu
 
 | Observación de la IA | Decisión | Justificación del equipo | Cambio realizado |
 |---|---|---|---|
-| COMPLETAR | Aceptar / ajustar / rechazar | COMPLETAR | COMPLETAR |
-| COMPLETAR | Aceptar / ajustar / rechazar | COMPLETAR | COMPLETAR |
-| COMPLETAR | Aceptar / ajustar / rechazar | COMPLETAR | COMPLETAR |
+| La distancia de “cercana” no está definida. | Aceptar | La clase indica que una regla útil debe ser verificable y presenta 50 m como ejemplo. | “cercana” a “distancia máxima de 50 m, pendiente de confirmación”. |
+| No se define qué condiciones determinan una captura exitosa. | Ajustar | Sin esa regla no se puede verificar completamente el resultado. | “captura exitosa” a“resultado de éxito o rechazo; condiciones exactas pendientes”. |
+| No se indica qué ocurre si no hay cápsulas. | Aceptar | La ficha necesita contemplar una condición de entrada para evitar inventar comportamiento. | Agregar rechazo sin modificar inventario e informar el motivo. |
 
 ### 5.3 Pregunta de autoría
 
-**¿Qué sugerencia rechazaron?** COMPLETAR  
-**¿Por qué no correspondía?** COMPLETAR  
-**¿Qué decisión fue exclusivamente del equipo?** COMPLETAR
+**¿Qué sugerencia rechazaron?** Se rechazó agregar una probabilidad específica de captura, porque esa regla no aparece en el enunciado ni en el material entregado.  
+**¿Por qué no correspondía?** Porque habría sido inventar una regla del negocio en lugar de dejarla como pregunta pendiente.  
+**¿Qué decisión fue exclusivamente del equipo?** Decidir que las condiciones exactas de éxito de la captura quedan pendientes de confirmación.
 
 > No publiquen contraseñas, correos personales, claves, tokens ni información sensible en la consulta o en el repositorio.
 
@@ -185,31 +187,32 @@ Primero guarden la ficha original. La IA puede detectar vacíos y formular pregu
 
 ### 6.1 Análisis del impacto
 
-**Qué cambió:** COMPLETAR  
-**Secciones afectadas:** ENTRADA / PROCESO / SALIDA / REGLA / ALCANCE / SUPUESTO  
-**Nueva decisión:** COMPLETAR  
-**Justificación:** COMPLETAR
+**Qué cambió:** Cambio la condición relacionada con la capacidad del equipo: cada entrenador puede llevar como máximo seis criaturas activas, y si el equipo esta completo, una captura exitosa deberá enviarse a la reserva.   
+**Secciones afectadas:** ✔ Entrada ✔ Proceso ✔ Salida ✔ Regla ✔ Alcance  
+□ Supuesto 
+**Nueva decisión:** Incorporar en la interfaz la cantidad de criaturas activa y la reserva, mientras se realiza una captura.   
+**Justificación:** El cambio modifica el comportamiento de la captura. Ahora es necesario conocer la cantidad de criaturas activas como entrada y verificar durante el proceso si el equipo está completo para producir una salida diferente según el resultado
 
 ### 6.2 Actualización
 
 | Elemento | Antes | Después del cambio |
 |---|---|---|
-| Entrada/EPS | COMPLETAR | COMPLETAR |
-| Proceso | COMPLETAR | COMPLETAR |
-| Regla | COMPLETAR | COMPLETAR |
-| Alcance | COMPLETAR | COMPLETAR |
+| Entrada/EPS | La captura requiere de la distancia, capsulas y condiciones de captura. | Además, debe verificar si en el equipo hay 6 criaturas para determinar su destino. |
+| Proceso | Se valida la captura y se da el resultado | Si la captura es exitosa y el equipo esta completo, la criatura es enviada a reserva |
+| Regla | El equipo no puede superar el límite indicado por la nueva condición.  | El entrenador puede tener como máximo 6 criaturas activas, en caso de superar el máximo, la nueva criatura pasa a reserva.  |
+| Alcance | Captura de criatura dentro de las condiciones definidas | Se determina el destino de la criatura, si va al equipo o a la reserva.  |
 
 ### 6.3 Nuevo criterio de aceptación
 
-**Criterio:** COMPLETAR  
-**Evidencia esperada:** COMPLETAR
+**Criterio:** Dado que el entrenador ya tiene seis criaturas en su equipo, cuando se realice una captura exitosa, entonces la nueva criatura no se incorpora al equipo activo y se envía a la reserva.  
+**Evidencia esperada:** Se observa que el equipo continúa teniendo como máximo seis criaturas activas y que la criatura capturada aparece en la reserva.
 
 ## 7. Ticket de salida
 
-**Resumen en una frase con actor, necesidad, regla principal y resultado:** COMPLETAR  
-**Evidencia más clara:** COMPLETAR  
-**Ambigüedad pendiente:** COMPLETAR  
-**Mejora concreta:** COMPLETAR
+**Resumen en una frase con actor, necesidad, regla principal y resultado:** El entrenador necesita capturar una criatura salvaje si cumple las condiciones de captura, el intento debe respetar las reglas establecidas y, si la captura es exitosa con el equipo completo, la criatura debe enviarse a la reserva.  
+**Evidencia más clara:** Un resultado observable en interfaz que indeque el exito o rechazo y cuando el equipo tiene seis criaturas activas, que la captura exitosa termine en la reserva.  
+**Ambigüedad pendiente:** Determinar las condiciones exactas que hacen que una captura sea exitosa o fallida.  
+**Mejora concreta:** se necesita saber qué condiciones hacen que una captura tenga éxito para poder comprobar si funciona correctamente.
 
 ## 8. Comprobación final
 
