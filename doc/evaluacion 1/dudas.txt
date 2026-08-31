@@ -1,0 +1,6 @@
+1. administrador a recurso humano: relacion, metodo
+2.administrador a informe: metodos
+3. clase usuarurio: herencia, existencia
+4. mesa dirtectica: creacion
+5. gerente: existencia, atributo o clase.
+6. relaciones
